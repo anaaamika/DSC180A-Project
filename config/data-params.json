@@ -1,0 +1,6 @@
+{
+    "subset": 2000000,
+    "start-date": datetime.date(2020, 3, 22),
+    "end-date": datetime.date(2021, 10, 11), 
+    "tweets_fn": 'dataset.tsv', 
+}
