@@ -1,0 +1,5 @@
+{
+    "num_tweets": "1000",
+    "tweets_fn": "test/testdata/test_tweets.jsonl",
+    "outfolder": "test"
+}

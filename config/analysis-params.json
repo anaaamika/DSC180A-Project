@@ -1,0 +1,4 @@
+{
+    "num_tweets": "2000000",
+    "tweets_fn": "data/tweets.jsonl"
+}
