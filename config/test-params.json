@@ -1,5 +1,27 @@
 {
-    "num_tweets": "1000",
-    "tweets_fn": "test/testdata/test_tweets.jsonl",
-    "outfolder": "test"
+    "test_url_prop_params": {
+        "num_tweets": "10000",
+        "tweets_fn": "test/testdata/test_tweets.jsonl",
+        "outfolder": "test"
+    },
+    "test_urls_params": {
+        "tweets_fn": "test/testdata/test_tweets.jsonl",
+        "urls_fn": "test/testdata/urls.jsonl",
+        "outfolder": "test"
+    },
+    "test_misinformation_url_prop_params": {
+        "urls_fn": "test/testdata/urls.jsonl",
+        "misinformation_csv": "src/analysis/iffymisinformationsites.csv",
+        "outfolder": "test"
+    },
+    "test_kcores_rt_params": {
+        "tweets_fn": "test/testdata/test_tweets.jsonl",
+        "graph_fn": "test/testdata/graph_edges.txt",
+        "outfolder": "test"
+    },
+    "test_kcores_graph_params": {
+        "graph_fn": "test/testdata/graph_edges.txt",
+        "cores": "2",
+        "outfolder": "test"
+    }
 }

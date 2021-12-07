@@ -1,4 +1,22 @@
 {
-    "num_tweets": "2000000",
-    "tweets_fn": "data/tweets.jsonl"
+    "url_prop_params": {
+        "num_tweets": "2000000",
+        "tweets_fn": "data/tweets.jsonl"
+    },
+    "urls_params": {
+        "tweets_fn": "data/tweets.jsonl",
+        "urls_fn": "data/urls.jsonl"
+    },
+    "misinformation_url_prop_params": {
+        "urls_fn": "data/urls.jsonl",
+        "misinformation_csv": "src/analysis/iffymisinformationsites.csv",
+    },
+    "kcores_rt_params": {
+        "tweets_fn": "data/tweets.jsonl",
+        "graph_fn": "data/graph_edges.txt",
+    },
+    "kcores_graph_params": {
+        "graph_fn": "data/graph_edges.txt",
+        "cores": "2",
+    }
 }

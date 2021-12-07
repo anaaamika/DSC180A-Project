@@ -1,0 +1,5 @@
+The proportion of tweets with urls was 0.2718.
+The proportion of retweets was 0.796.
+The number of unique users was 9882.
+The proportion of URLs leading to misinformation was 0.0.
+The number of edges with 2 cores was 0.

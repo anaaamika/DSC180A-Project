@@ -8,10 +8,11 @@ sys.path.insert(0, 'src/data')
 sys.path.insert(0, 'src/analysis')
 sys.path.insert(0, 'test')
 
-from hydrate_tweets import fetch_tweets
+from hydrate_tweets import fetch_tweets, missingness
 from download_ids import download_tweet_ids
 import eda
 import generate_data
+import kcore
 
 def main(targets):
     if 'data' in targets:
@@ -20,12 +21,17 @@ def main(targets):
 
         download_tweet_ids(**data_cfg["download_params"])
         fetch_tweets(**data_cfg["hydrate_params"])
+        missingness(**data_cfg["missingness_params"])
         
     if 'analysis' in targets:
         with open('config/analysis-params.json') as fh:
             analysis_cfg = json.load(fh)
-
-        eda.url_proportion(**analysis_cfg)
+            
+        eda.url_proportion(**analysis_cfg["url_prop_params"])
+        eda.urls(**analysis_cfg["urls_params"])
+        eda.misinformation_proportion(**analysis_cfg["misinformation_url_prop_params"])
+        kcore.rt_ids(**analysis_cfg["kcores_rt_params"])
+        kcore.create_kcore(**analysis_cfg["kcores_graph_params"])
 
     if 'model' in targets:
         print("Coming soon!")
@@ -33,13 +39,13 @@ def main(targets):
     if 'test' in targets:
         with open('config/test-params.json') as fh:
             test_cfg = json.load(fh)
-        print('here')
-        if not os.path.exists('test/testdata/test_tweets.jsonl') or os.path.getsize('test/testdata/test_tweets.jsonl') == 0:
-            generate_data.create_test_data(test_cfg['num_tweets'])
-            print('here')
+        generate_data.create_test_data(test_cfg["test_url_prop_params"]['num_tweets'])
             
-        eda.url_proportion(**test_cfg)
-            
+        eda.url_proportion(**test_cfg["test_url_prop_params"])
+        eda.urls(**test_cfg["test_urls_params"])
+        eda.misinformation_proportion(**test_cfg["test_misinformation_url_prop_params"])
+        kcore.rt_ids(**test_cfg["test_kcores_rt_params"])
+        kcore.create_kcore(**test_cfg["test_kcores_graph_params"])
     
     
 if __name__ == '__main__':

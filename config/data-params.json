@@ -9,5 +9,10 @@
         "subset_size": "2000000",
         "tweets_ids_fn": 'data/tweet_ids_dataset.tsv', 
         "tweets_fn": 'data/tweets.jsonl'
+    },
+    
+    "missingness_params": {
+        "tweets_ids_fn": 'data/tweet_ids_dataset.tsv', 
     }   
+    
 }
